@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "DESKTOP-TL1PQ30",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus2.actions.githubusercontent.com/reyGfVQhA9wMWiCSqrUs6DFHAEHXog8IGsZJFFHbLG1XfFlBbp/",
+  "gitHubUrl": "https://github.com/zebakh600/count-deploy",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

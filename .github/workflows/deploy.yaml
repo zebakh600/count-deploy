@@ -1,0 +1,25 @@
+name: Build and Deploy to Kind
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted         # your laptop runner
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t dev-tsk:latest .
+
+      - name: Load image into Kind
+        run: kind load docker-image dev-tsk:latest --name devops-tsk
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/redis-deployment.yaml
+          kubectl apply -f k8s/backend-deployment.yaml
+          kubectl apply -f k8s/hpa.yaml
+          kubectl rollout status deployment/backend
