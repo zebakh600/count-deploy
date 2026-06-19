@@ -34,10 +34,10 @@ spec:
         resources:
           requests:
             cpu: 200m
-            memory: 128Mi
+            memory: 16Mi
           limits:
             cpu: 500m
-            memory: 256Mi        # will be lowered later to trigger OOM
+            memory: 32Mi        
         readinessProbe:
           httpGet:
             path: /
